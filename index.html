@@ -1,27 +1,54 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
     <title>NodeJS Oslo</title>
+
+    <meta property="og:title" content="NodeJS Oslo" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:site" content="@nodejsoslo" />
+    <meta name="twitter:title" content="NodeJS Oslo" />
+
     <link rel="stylesheet" href="entireframework.min.css">
+    <style>
+    .top-row { background-color: purple; color: white; text-align:center; margin-top:0}
+    .bottom-row { background-color: #333; padding: 20px; color: white; text-align:center; margin-top:0}
+    .bottom-row a, .bottom-row a:visited { color: white; }
+    </style>
   </head>
   <body>
-    <div class="row" style="text-align:center">
+    <div class="row top-row">
       <h1>NodeJS Oslo</h1>
     </div>
     <div class="row">
       <div class="col c2">&nbsp;</div>
       <div class="col c4">
+        <p>NodeJS Oslo er <a href="https://github.com/orgs/nodejsoslo/people">en gjeng</a> som jobber med Node og som arrangerer diverse ting knyttet til det.
+          Vi arrangerer NodeJSOslo Meetup som er hver andre måned. Ønsker du å snakke eller vet om noen
+          som burde snakker der, så er det bare å gi oss et tips!</p>
         <p>Hva vi gjør:</p>
         <ul>
           <li><a href="//www.meetup.com/NodeJSOslo/">NodeJSOslo Meetup</a></li>
         </ul>
-        <p>Bli med å organisere? <a href="https://github.com/nodejsoslo/organizers/issues">legg inn en issue</a>.</p>
+        <p>Lyst til å bli med å organisere? <a href="https://github.com/nodejsoslo/organizers/issues">legg inn en issue</a> på GitHub.</p>
       </div>
       <div class="col c4">
         <div data-upcoming>
         </div>
+        <a class="twitter-timeline" data-widget-id="600720083413962752" href="https://twitter.com/nodejsoslo"
+         data-tweet-limit="2" data-screen-name="NodeJSOslo"
+         data-chrome="noheader,nofooter"
+         data-link-color="purple" ></a>
       </div>
       <div class="col c2">&nbsp;</div>
+    </div>
+    <div class="row bottom-row">
+      <a href="https://twitter.com/nodejsoslo">@nodejsoslo</a> -
+      <a href="http://www.meetup.com/nodejsoslo/">Meetup.com</a>
+      <p>Alle som deltar på våre arrangement må følge
+      <a href="http://jsconf.com/codeofconduct.html">Code of Conduct</a></p>
     </div>
     <script>
     function addUpcomingInfo(data){
@@ -35,6 +62,20 @@
       addUpcomingInfo(res.data);
     }
     </script>
+    <script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+      t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+    t._e = [];
+    t.ready = function(f) {
+      t._e.push(f);
+    };
+    return t;
+    }(document, "script", "twitter-wjs"));</script>
     <script deffer src="http://api.meetup.com/NodeJSOslo/events?callback=handleCb"></script>
   </body>
 </html>
