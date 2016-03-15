@@ -13,9 +13,13 @@
 
     <link rel="stylesheet" href="entireframework.min.css">
     <style>
-    .top-row { background-color: purple; color: white; text-align:center; margin-top:0}
-    .bottom-row { background-color: #333; padding: 20px; color: white; text-align:center; margin-top:0}
-    .bottom-row a, .bottom-row a:visited { color: white; }
+    .phm { padding-right: 12px; padding-left: 12px;}
+    .top-row { background: rgba(248,48,138,1); background: -moz-linear-gradient(left, rgba(248,48,138,1) 0%, rgba(241,91,161,1) 0%, rgba(246,14,126,1) 0%, rgba(240,25,129,1) 0%, rgba(51,0,128,1) 100%); background: -webkit-gradient(left top, right top, color-stop(0%, rgba(248,48,138,1)), color-stop(0%, rgba(241,91,161,1)), color-stop(0%, rgba(246,14,126,1)), color-stop(0%, rgba(240,25,129,1)), color-stop(100%, rgba(51,0,128,1))); background: -webkit-linear-gradient(left, rgba(248,48,138,1) 0%, rgba(241,91,161,1) 0%, rgba(246,14,126,1) 0%, rgba(240,25,129,1) 0%, rgba(51,0,128,1) 100%); background: -ms-linear-gradient(left, rgba(248,48,138,1) 0%, rgba(241,91,161,1) 0%, rgba(246,14,126,1) 0%, rgba(240,25,129,1) 0%, rgba(51,0,128,1) 100%); background: linear-gradient(to right, rgba(248,48,138,1) 0%, rgba(241,91,161,1) 0%, rgba(246,14,126,1) 0%, rgba(240,25,129,1) 0%, rgba(51,0,128,1) 100%); filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f8308a', endColorstr='#330080', GradientType=1 );
+      color: #eee; text-align:center; margin-top:0}
+    .bottom-row { position: absolute; bottom: 0; width:100%;
+      border-top: 3px solid rgba(248,48,138,1); padding: 20px; color: white; text-align:center; margin-top:0}
+    .bottom-row a, .bottom-row a:visited { color: #666; }
+    .bottom-row p { font-size: 12px; font-style: italic; color: #666;}
     </style>
   </head>
   <body>
@@ -24,7 +28,7 @@
     </div>
     <div class="row">
       <div class="col c2">&nbsp;</div>
-      <div class="col c4">
+      <div class="col c4 phm">
         <p>NodeJS Oslo er <a href="https://github.com/orgs/nodejsoslo/people">en gjeng</a> som jobber med Node og som arrangerer diverse ting knyttet til det.
           Vi arrangerer NodeJSOslo Meetup som er hver andre måned. Ønsker du å snakke eller vet om noen
           som burde snakker der, så er det bare å gi oss et tips!</p>
@@ -53,7 +57,6 @@
     <script>
     function addUpcomingInfo(data){
       var container = document.querySelector('*[data-upcoming]');
-      console.log(container, data.length);
       if (data.length === 0){
         container.innerHTML = '<p>Ingen meetups planlaget enda, <a href="https://github.com/nodejsoslo/meetups/issues">foreslå en</a> du!</p>';
       }
