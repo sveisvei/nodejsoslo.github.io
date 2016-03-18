@@ -59,6 +59,14 @@
       var container = document.querySelector('*[data-upcoming]');
       if (data.length === 0){
         container.innerHTML = '<p>Ingen meetups planlaget enda, <a href="https://github.com/nodejsoslo/meetups/issues">foreslå en</a> du!</p>';
+      } else {
+        var announcements = '<h3>Kommende arrangement:</h3><ul>';
+        data.map(function(meetup){
+          var d = new Date(meetup.time);
+          announcements += '<li>' + d.getDate() + '.' + d.getMonth() + ' - <a href="' + meetup.link +'">' + meetup.name + '</a></li>';
+        })
+        announcements += '</ul>';
+        container.innerHTML = announcements;
       }
     }
     function handleCb(res){
